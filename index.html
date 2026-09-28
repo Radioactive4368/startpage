@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Exeter College links</title>
+<style>
+  :root {
+    --teal: #2bb7b3;
+    --blue: #2f5fb8;
+    --pink: #d9779f;
+    --ink: #ffffff;
+    box-sizing: border-box;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; background: transparent; }
+  body {
+    font-family: "Open Sans", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    padding: 6px;
+  }
+  .tile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+    min-height: 130px;
+    padding: 22px 26px;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--ink);
+    background:
+      radial-gradient(120% 140% at 0% 0%, rgba(217,119,159,.85) 0%, rgba(217,119,159,0) 55%),
+      linear-gradient(120deg, var(--teal) 0%, var(--blue) 100%);
+    box-shadow: 0 6px 18px rgba(30, 60, 120, .28), inset 0 0 0 1px rgba(255,255,255,.25);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .tile::after {
+    content: "";
+    position: absolute;
+    right: -50px; top: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.14);
+    pointer-events: none;
+  }
+  .tile:hover, .tile:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(30, 60, 120, .38), inset 0 0 0 1px rgba(255,255,255,.4);
+  }
+  .tile:focus-visible { outline: 3px solid #fff; outline-offset: -6px; }
+  .tile:active { transform: translateY(0); }
+
+  .icon {
+    flex: none;
+    width: 64px; height: 64px;
+    border-radius: 16px;
+    display: grid; place-items: center;
+    background: rgba(255,255,255,.22);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+  }
+  .icon svg { width: 34px; height: 34px; }
+
+  .text { position: relative; z-index: 1; min-width: 0; }
+  h1 {
+    margin: 0 0 4px;
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.15;
+    text-shadow: 0 1px 2px rgba(0,0,0,.18);
+  }
+  p { margin: 0; font-size: 14px; opacity: .92; }
+
+  .go {
+    position: relative; z-index: 1;
+    margin-left: auto;
+    flex: none;
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background: #fff;
+    color: var(--blue);
+    transition: transform .18s ease;
+  }
+  .go svg { width: 20px; height: 20px; }
+  .tile:hover .go, .tile:focus-visible .go { transform: translateX(3px); }
+
+  @media (max-width: 340px) {
+    .icon { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tile, .go { transition: none; }
+  }
+
+  body { display: flex; flex-direction: column; gap: 12px; height: auto; min-height: 100%; }
+  .tile { height: auto; flex: 1 0 auto; }
+</style>
+</head>
+<body>
+  <a class="tile" href="https://hub.exe-coll.ac.uk/" target="_blank" rel="noopener noreferrer" aria-label="Open Exeter College Hub in a new tab">
+    <span class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M2 9.5 12 4l10 5.5-10 5.5L2 9.5Z"/>
+        <path d="M6 12v4.5c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8V12"/>
+        <path d="M22 9.5V15"/>
+      </svg>
+    </span>
+    <span class="text">
+      <h1>Exeter College Hub</h1>
+      <p>Timetable, resources and student services</p>
+    </span>
+    <span class="go" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </a>
+  <a class="tile" href="https://mis-stud.exe-coll.ac.uk/myeilp/home.php" target="_blank" rel="noopener noreferrer" aria-label="Open My eILP in a new tab">
+    <span class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="4" width="14" height="17" rx="2.5"/>
+        <path d="M9 4V3h6v1"/>
+        <path d="m8.5 12 2 2 4-4.5"/>
+        <path d="M9 17.5h6"/>
+      </svg>
+    </span>
+    <span class="text">
+      <h1>My eILP</h1>
+      <p>Your individual learning plan</p>
+    </span>
+    <span class="go" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </a>
+</body>
+</html>
