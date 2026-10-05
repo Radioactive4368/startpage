@@ -11,18 +11,23 @@ body{padding:8px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-seri
 .clock{position:relative;overflow:hidden;height:100%;min-height:60px;border-radius:14px;display:grid;place-items:center;
 background:radial-gradient(120% 150% at 0 0,#c4719b 0%,transparent 48%),linear-gradient(135deg,#2fb3b3,#3068c4);box-shadow:0 2px 8px #0003}
 .clock:before{content:"";position:absolute;right:-6%;top:-30%;width:42%;aspect-ratio:1;border-radius:50%;background:#ffffff22}
-#t{position:relative;font-size:min(17vw,58vh);font-weight:700;letter-spacing:.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap}
+#t{position:relative;font-size:min(11vw,58vh);font-weight:700;letter-spacing:.02em;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap}
 </style>
 </head>
 <body>
-<div class="clock" role="timer" aria-label="Current time"><div id="t">00:00:00</div></div>
+<div class="clock" role="timer" aria-label="Current time"><div id="t">00:00:00.000</div></div>
 <script>
 const el = document.getElementById('t');
-const pad = n => String(n).padStart(2, '0');
+const pad = (n, len = 2) => String(n).padStart(len, '0');
+
 function tick() {
   const d = new Date();
-  el.textContent = pad(d.getHours()) + ':' + pad(d.getMinutes()) + ':' + pad(d.getSeconds()) + ':' + pad(d.getMilliseconds());
-  setTimeout(tick, 1000 - d.getMilliseconds());
+  el.textContent =
+    pad(d.getHours()) + ':' +
+    pad(d.getMinutes()) + ':' +
+    pad(d.getSeconds()) + '.' +
+    pad(d.getMilliseconds(), 3);
+  requestAnimationFrame(tick);
 }
 tick();
 </script>
