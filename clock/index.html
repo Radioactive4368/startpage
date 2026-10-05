@@ -25,8 +25,7 @@ function tick() {
   el.textContent =
     pad(d.getHours()) + ':' +
     pad(d.getMinutes()) + ':' +
-    pad(d.getSeconds()) + '.' +
-    pad(d.getMilliseconds(), 1);
+    pad(d.getSeconds());
   requestAnimationFrame(tick);
 }
 tick();
